@@ -34,34 +34,34 @@ public class BattleShipGame{
 		// } 
 
 
-		for(int cell : locationThree){
-			if(userGuessInt == cell){
-				result = "hit";
-				count++;
-				break;
-			}
-			result = "miss";
-		}
-		if(count == 3){
-			result = "kill";
-		}
-		System.out.println(result);
-		return(result);	
-
-
-		// count++;
-		// for(int i = 0; i < locationThree.size(); i++){
-		// 	if(userGuessInt == locationThree.get(i)){
-		// 		locationThree.remove(i);
+		// for(int cell : locationThree){
+		// 	if(userGuessInt == cell){
 		// 		result = "hit";
+		// 		count++;
 		// 		break;
 		// 	}
+		// 	result = "miss";
 		// }
-		// if(locationThree.isEmpty()){
-		// 	System.out.println("kill. game is over. count = " +  count);
+		// if(count == 3){
 		// 	result = "kill";
 		// }
+		// System.out.println(result);
 		// return(result);	
+
+
+		//count++;
+		for(int i = 0; i < locationThree.size(); i++){
+			if(userGuessInt == locationThree.get(i)){
+				locationThree.remove(i);
+				result = "hit";
+				break;
+			}
+		}
+		if(locationThree.isEmpty()){
+			System.out.println("kill. game is over.");
+			result = "kill";
+		}
+		return(result);	
 		
 	}
 }
