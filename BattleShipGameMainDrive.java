@@ -1,4 +1,4 @@
-import java.util.Scanner;
+// import java.util.Scanner;
 import java.util.Arrays;
 
 public class BattleShipGameMainDrive{
@@ -7,20 +7,21 @@ public class BattleShipGameMainDrive{
 		boolean isAlive = true;
 		int locationStart = (int)(Math.random()*4);
 		int[] locationArray = {locationStart, locationStart+1, locationStart+2};
-		
+		GameHelper helper = new GameHelper();
+
 		System.out.println(Arrays.toString(locationArray));
 
 		String result;
 		String userGuess;
-		Scanner scan = new Scanner(System.in); // read user input
+		//Scanner scan = new Scanner(System.in); // read user input
 		BattleShipGame gameOne = new BattleShipGame();
 
 		gameOne.setLocation(locationArray);
 
 		while(isAlive){
 			//String userGuess = console.readLine("Enter input:");
-			System.out.println("Entera number: ");
-			userGuess = scan.next();
+			// userGuess = scan.next();
+			userGuess = helper.getUserInput("enter a number: ");
 			result = gameOne.checkLocation(userGuess);
 			numOfGuesses+=1;
 			if(result.equals("kill")){
