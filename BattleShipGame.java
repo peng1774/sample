@@ -49,19 +49,31 @@ public class BattleShipGame{
 		// return(result);	
 
 
-		//count++;
-		for(int i = 0; i < locationThree.size(); i++){
-			if(userGuessInt == locationThree.get(i)){
-				locationThree.remove(i);
-				result = "hit";
-				break;
-			}
+		// //count++;
+		// for(int i = 0; i < locationThree.size(); i++){
+		// 	if(userGuessInt == locationThree.get(i)){
+		// 		locationThree.remove(i);
+		// 		result = "hit";
+		// 		break;
+		// 	}
+		// }
+		// if(locationThree.isEmpty()){
+		// 	System.out.println("kill. game is over.");
+		// 	result = "kill";
+		// }
+		// return(result);	
+
+		result = "miss";
+		if(locationThree.contains(userGuessInt)){
+			int idx = locationThree.indexOf(userGuessInt);
+			locationThree.remove(idx);
+			result = "hit";
 		}
 		if(locationThree.isEmpty()){
 			System.out.println("kill. game is over.");
 			result = "kill";
 		}
-		return(result);	
+		return result;
 		
 	}
 }
