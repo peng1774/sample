@@ -7,16 +7,20 @@ public class BattleShipGameMainDrive{
 		boolean isAlive = true;
 		int locationStart = (int)(Math.random()*4);
 		int[] locationArray = {locationStart, locationStart+1, locationStart+2};
+		String[] locationArrayString = new String[locationArray.length];
+		for(int i = 0; i < locationArray.length; i++){
+			locationArrayString[i] = String.valueOf(locationArray[i]);
+		}
 		GameHelper helper = new GameHelper();
 
-		System.out.println(Arrays.toString(locationArray));
+		System.out.println(Arrays.toString(locationArrayString));
 
 		String result;
 		String userGuess;
 		//Scanner scan = new Scanner(System.in); // read user input
 		BattleShipGame gameOne = new BattleShipGame();
 
-		gameOne.setLocation(locationArray);
+		gameOne.setLocation(locationArrayString);
 
 		while(isAlive){
 			//String userGuess = console.readLine("Enter input:");
