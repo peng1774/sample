@@ -1,12 +1,12 @@
 public class BattleShipGameTestDrive{
 	public static void main(String[] args){
-		BattleShipGame gameOne = new BattleShipGame();
-		int[] locationOne = {1,2,3};
-		String userGuess = "1";
+		BattleShipGame shipTest = new BattleShipGame();
+		String[] locationOne = {"1A","1B","1C"};
+		String userGuess = "1A";
 		String testResult;
 
-		gameOne.setLocation(locationOne);
-		testResult = gameOne.checkLocation(userGuess);
+		shipTest.setLocation(locationOne);
+		testResult = shipTest.checkLocation(userGuess);
 
 		if( testResult == "hit"){
 	//	if(gameOne.checkLocation(userGuess).equals("hit"){
